@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 from __future__ import print_function
-
+from docx2pdf import convert
 import sys
 import time
 import subprocess
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
+
+# PDFに変換するかどうか
+w2p_flag = True
 
 
 watch_dir_path = "./"
@@ -18,7 +21,14 @@ class MyHandler(PatternMatchingEventHandler):
 
     def _run_command(self):
         subprocess.run(["pandoc" , "-d" , "defaults.yml" ])
-        subprocess.run(["echo" , "変更を検知して、変換しました。" ])
+
+        subprocess.run(["echo" , "変更を検知して、wordに変換しました。" ])
+        if w2p_flag:            
+            try:
+                convert("./", "./")
+                print("wordをpdfに変換しました。。")
+            except:
+                print("wordをpdfに変換できませんでした。")
 
     def on_moved(self, event):
         self._run_command()

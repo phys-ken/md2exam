@@ -11,6 +11,7 @@ pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても
 * Pandocをインストールしてください。
 * python環境を構築してください。
 * `pip install watchdog`で、watchdogをインストールしてください。
+* `pip install word2pdf`をインストールしてください。
 * markdownエディタで`01_input.md`を開いて、編集します。
 * 同時に、`pyhon dog.py`を実行します。すると、ファイルの監視が始まります。
 * `01_input.md`を保存すると。同時に`02_output.docx`を生成します。
