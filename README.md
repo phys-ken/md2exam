@@ -1,6 +1,10 @@
 # markdown2定期試験
 * markdown で試験問題の雛形を作り、pandocで.docxに変換します。
 * watchdogで監視しmdの変更を自動検知してpandocで変換します。
+* [mottox2
+/
+pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても参考にしました。
+
 
 ## 環境構築
 
