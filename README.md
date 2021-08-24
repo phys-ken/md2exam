@@ -22,7 +22,8 @@ pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても
 * `01_input.md`が操作対象になります。
 * `python dog.py`で、ファイル監視が始まります(番犬に例えて、dogというプログラム名にしました。)。 
 * mdの変更を検知すると、以下の通り、`#`の数で見出しの階層を判定して、pandocがwordファイルを出力します。
-``` html
+
+```html
 <!-- 
 ------設問のタグ付け------(ここは消さない)
 # 大問　：　14pt アンダーバー
@@ -33,7 +34,9 @@ pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても
 ##### 選択肢 ①〜⑩
 -->
 ```
+
 * また、`dog.py`の上部で変換設定をコントロールできます。
+
 ``````Python
 w2p_flag = True # PDFに変換するかどうか
 kaitoBango = True # 回答番号の付記するかどうか
