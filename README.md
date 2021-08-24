@@ -12,9 +12,31 @@ pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても
 * python環境を構築してください。
 * `pip install watchdog`で、watchdogをインストールしてください。
 * `pip install word2pdf`をインストールしてください。
-* markdownエディタで`01_input.md`を開いて、編集します。
-* 同時に、`pyhon dog.py`を実行します。すると、ファイルの監視が始まります。
-* `01_input.md`を保存すると。同時に`02_output.docx`を生成します。
+
+
+## 使い方
+* `01_input.md`が操作対象になる。
+* `python dog.py`で、ファイル監視が始まります(番犬に例えて、dogというプログラム名にしました。)。 
+* mdの変更を検知すると、以下の通り、`#`の数で見出しの階層を判定して、pandocがwordファイルを出力します。
+``` html
+<!-- 
+------設問のタグ付け------(ここは消さない)
+# 大問　：　14pt アンダーバー
+## 小問：　10.5pt (1)
+### セクション 10.5pt (A)
+#### 小セクション 10.5pt (ア)
+
+##### 選択肢 ①〜⑩
+-->
+```
+* また、`dog.py`の上部で変換設定をコントロールできます。
+``````Python
+w2p_flag = True # PDFに変換するかどうか
+kaitoBango = True # 回答番号の付記するかどうか
+choiceSort = True # 選択肢のソートするかどうか
+``````
+
+
 
 ## memo
 

@@ -6,9 +6,13 @@ import time
 import subprocess
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
+import shutil
+import dog_filter
 
-# PDFに変換するかどうか
-w2p_flag = True
+# 変更のための様式たち
+w2p_flag = True # PDFに変換するかどうか
+kaitoBango = True # 回答番号の付記
+choiceSort = True # 選択肢のソート
 
 
 watch_dir_path = "./"
@@ -20,12 +24,14 @@ class MyHandler(PatternMatchingEventHandler):
         super(MyHandler, self).__init__(patterns=patterns)
 
     def _run_command(self):
+        dog_filter.dog_filter(kaitoBango , choiceSort)
         subprocess.run(["pandoc" , "-d" , "defaults.yml" ])
 
         subprocess.run(["echo" , "変更を検知して、wordに変換しました。" ])
         if w2p_flag:            
             try:
                 convert("./", "./")
+                print("\n")
                 print("wordをpdfに変換しました。。")
             except:
                 print("wordをpdfに変換できませんでした。")
@@ -54,6 +60,13 @@ def watch(path, extension):
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":

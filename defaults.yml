@@ -3,7 +3,7 @@ to: docx
 output-file: 02_output.docx
 
 input-files:
-- 01_input.md
+- _tmp.md
 
 filters:
 - filters/pagebreak.lua
