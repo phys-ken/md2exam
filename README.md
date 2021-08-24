@@ -1,4 +1,6 @@
 # markdown2定期試験
+![画像](./figs/pandoc_top.png)
+
 * markdown で試験問題の雛形を作り、pandocで.docxに変換します。
 * watchdogで監視しmdの変更を自動検知してpandocで変換します。
 * [mottox2
