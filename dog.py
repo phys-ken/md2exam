@@ -18,6 +18,10 @@ choiceSort = True # 選択肢のソート
 watch_dir_path = "./"
 watch_file = "01_input.md"
 
+def echoDog():
+    print("mdの変更を検知しました。wordに変換しました。")
+    return 0
+
 
 class MyHandler(PatternMatchingEventHandler):
     def __init__(self,  patterns):
@@ -26,8 +30,7 @@ class MyHandler(PatternMatchingEventHandler):
     def _run_command(self):
         dog_filter.dog_filter(kaitoBango , choiceSort)
         subprocess.run(["pandoc" , "-d" , "defaults.yml" ])
-
-        subprocess.run(["echo" , "変更を検知して、wordに変換しました。" ])
+        echoDog()
         if w2p_flag:            
             try:
                 convert("./", "./")
