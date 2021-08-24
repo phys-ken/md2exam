@@ -57,7 +57,7 @@ def dog_filter(kaitoBango = True , choiceSort = True):
       while not "#" in kaitoBoxData[int(list(c.keys())[0]) - row_cnt]:
         row_cnt += 1  
       else:
-        kaitoBoxData[list(c.keys())[0] - row_cnt] += "  解答番号：" + str(kaito_box)
+        kaitoBoxData[list(c.keys())[0] - row_cnt] += "  **解答番号：" + str(kaito_box) + "**"
         #print(kaitoBoxData[list(c.keys())[0] - row_cnt])  
             
       kaito_box = kaito_box + 1

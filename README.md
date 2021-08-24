@@ -1,4 +1,6 @@
 # markdown2定期試験
+ **Pythonがないと動きません、私と同じ自治体の人は、校務PCでは使えません、残念！**
+
 ![画像](./figs/pandoc_top.png)
 
 * markdown で試験問題の雛形を作り、pandocで.docxに変換します。
@@ -17,7 +19,7 @@ pandoc-word-starter](https://github.com/mottox2/pandoc-word-starter)をとても
 
 
 ## 使い方
-* `01_input.md`が操作対象になる。
+* `01_input.md`が操作対象になります。
 * `python dog.py`で、ファイル監視が始まります(番犬に例えて、dogというプログラム名にしました。)。 
 * mdの変更を検知すると、以下の通り、`#`の数で見出しの階層を判定して、pandocがwordファイルを出力します。
 ``` html
@@ -38,6 +40,18 @@ kaitoBango = True # 回答番号の付記するかどうか
 choiceSort = True # 選択肢のソートするかどうか
 ``````
 
+* マーク等の選択肢を連番で降りたいときは、無駄な改行をせずに続けて記入してください。
+
+``` markdown
+
+##### 選択肢1
+##### 選択肢2
+##### 選択肢3
+                    <!--無駄な空白行を入れちゃダメ！-->
+##### 選択肢4(ダメな例)
+
+
+```
 
 
 ## memo
